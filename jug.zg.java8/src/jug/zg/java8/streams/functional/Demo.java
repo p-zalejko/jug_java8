@@ -24,7 +24,6 @@ public class Demo {
         for (int i = 0; i < NUMBER; i++) {
             final Integer age = ageGenerator.get();
             final String name = nameGenerator.apply(NAMES.length);
-
             list.add(new Person(name, age));
         }
 
@@ -73,19 +72,15 @@ public class Demo {
         // person.ifPresent(item -> System.out.println(item));
         // person.orElseThrow(IllegalStateException::new);
 
-        //@formatter:off
         list.stream()
-        .filter(p -> p.getName().equals(NAMES[0]))
-        .findFirst()
-        .ifPresent(System.out::println);
-        //@formatter:on
+        		.filter(p -> p.getName().equals(NAMES[0]))
+        		.findFirst()
+        		.ifPresent(System.out::println);
 
-        //@formatter:off
         final Map<String, List<Person>> byName = list.stream()
                 .filter(isAdult)
                 .filter(p -> p.getAge() < 50)
                 .collect(Collectors.groupingBy(Person::getName));
-        //@formatter:on
 
         System.out.println(byName.keySet());
     }

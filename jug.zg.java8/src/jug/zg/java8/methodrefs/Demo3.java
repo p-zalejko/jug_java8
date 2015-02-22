@@ -6,8 +6,10 @@ public class Demo3 {
 
 	public static void main(String[] args) {
 		Supplier<Double> random1 = Math::random;
-		
 		System.out.println(random1.get());
-		System.out.println(random1.get());
+
+		// constructor reference.
+		Supplier<Demo3> instanceFactory = Demo3::new;
+		System.out.println(instanceFactory.get());
 	}
 }

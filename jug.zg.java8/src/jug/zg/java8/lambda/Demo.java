@@ -36,7 +36,9 @@ public class Demo {
             }
         });
         Collections.sort(list, (o1, o2) -> o1.compareTo(o2));
+      
         Collections.sort(list, (final String o1, final String o2) -> o1.compareTo(o2));
+       
         Collections.sort(list, (o1, o2) -> {
             final int result = o1.compareTo(o2);
             return result;// return is needed when {}
@@ -81,5 +83,7 @@ public class Demo {
 
         // using lambda
         button.addActionListener(e -> System.out.println(e));
+        //or
+        java.awt.event.ActionListener listener = (e) -> System.out.println(e);
     }
 }

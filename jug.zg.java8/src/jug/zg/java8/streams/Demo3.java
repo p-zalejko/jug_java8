@@ -22,14 +22,11 @@ public class Demo3 {
         System.out.println(result.get(30));
 
         // 2
-
-        //@formatter:off
         final List<String> collect = list.stream()
                 .filter(p -> p.getAge() > 25)
                 .filter(p -> p.getAge() < 30)
                 .map(Person::getName) // will be called only on matching objects!
                 .collect(Collectors.toList());
-        // @formatter:on
     }
 
     static class Person {

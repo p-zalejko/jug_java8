@@ -29,32 +29,24 @@ public class Demo2 {
         final List<Demo2> list = Arrays.asList(new Demo2("foo", 1, 2, 3), new Demo2("bar", 4, 5, 6));
 
         // 1
-        //@formatter:off
         final Function<Demo2, String> mapper = i -> i.getName();
         list.stream()
-        .map(mapper)
-        .forEach(System.out::print);
-        //@formatter:on
-        System.out.println("");
+        		.map(mapper)
+        		.forEach(System.out::print);
 
         // 2
-        //@formatter:off
         final Predicate<String> predicate = i -> i.startsWith("f");
         list.stream()
-        .map(mapper)
-        .filter(predicate)
-        .forEach(System.out::print);
-        //@formatter:on
-        System.out.println("");
+        		.map(mapper)
+        		.filter(predicate)
+        		.forEach(System.out::print);
 
         // 3
-        //@formatter:off
         final Function<Demo2, Stream<Integer>> mapper2 = i -> i.getInts().stream();
         final Optional<Integer> findFirst = list.stream()
                 .flatMap(mapper2)
                 .filter(i -> i > 5)
                 .findFirst();
         findFirst.ifPresent(System.out::print);
-        //@formatter:on
     }
 }
