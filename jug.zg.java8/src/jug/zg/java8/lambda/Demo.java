@@ -35,10 +35,9 @@ public class Demo {
                 return o1.compareTo(o2);
             }
         });
+        
         Collections.sort(list, (o1, o2) -> o1.compareTo(o2));
-      
         Collections.sort(list, (final String o1, final String o2) -> o1.compareTo(o2));
-       
         Collections.sort(list, (o1, o2) -> {
             final int result = o1.compareTo(o2);
             return result;// return is needed when {}

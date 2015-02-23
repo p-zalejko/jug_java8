@@ -9,8 +9,8 @@ public class Demo0 {
 
 		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
 
-		Stream<Integer> filter = list.stream().filter(i -> i > 2);
-		boolean result = filter.anyMatch(i -> true);
-		filter.anyMatch(i -> true); // throws an exception
+		Stream<Integer> stream = list.stream();
+		boolean result = stream.filter(i -> i > 2).anyMatch(i -> true);
+		boolean result2 =stream.filter(i -> i > 2).anyMatch(i -> true); // throws an exception
 	}
 }

@@ -10,26 +10,26 @@ public class Demo1 {
 
     public static void main(final String[] args) {
     	//NOTE: stream can be opened only once!
-        final Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        final Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(4, 7, 5, 1, 9, 6, 2, 10,3 ,8 );
 
-        // 1
+        System.out.println("Example 1: ");
         final Stream<Integer> stream = streamSupplier.get();
         stream
         	.filter(i -> i > 5)
+        	.sorted()
         	.forEach(System.out::print);
 
-        // 2
+        System.out.println("\n\nExample 2: ");
         final Predicate<Integer> predicate = i -> i < 8;
         streamSupplier.get()
         		.filter(i -> i > 5)
         		.filter(predicate)
         		.forEach(System.out::print);
 
-        // 3
+        System.out.println("\n\nExample 3: ");
         final List<Integer> result = streamSupplier.get()
                 .filter(i -> i > 5)
                 .collect(Collectors.toList());
-
         result.forEach(System.out::print);
     }
 }

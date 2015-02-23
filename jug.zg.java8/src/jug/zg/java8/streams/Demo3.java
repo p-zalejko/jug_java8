@@ -17,16 +17,17 @@ public class Demo3 {
         list.add(new Person("B", 30));
         list.add(new Person("C", 30));
 
-        // 1
+        System.out.println("Example 1: ");
         final Map<Integer, List<Person>> result = list.stream().collect(Collectors.groupingBy(Person::getAge));
         System.out.println(result.get(30));
 
-        // 2
+        System.out.println("\nExample 2: ");
         final List<String> collect = list.stream()
                 .filter(p -> p.getAge() > 25)
                 .filter(p -> p.getAge() < 30)
                 .map(Person::getName) // will be called only on matching objects!
                 .collect(Collectors.toList());
+        System.out.println(collect);
     }
 
     static class Person {
