@@ -18,7 +18,8 @@ public class Demo3 {
         list.add(new Person("C", 30));
 
         System.out.println("Example 1: ");
-        final Map<Integer, List<Person>> result = list.stream().collect(Collectors.groupingBy(Person::getAge));
+        
+        Map<Integer, List<Person>> result = list.stream().collect(Collectors.groupingBy(Person::getAge));
         System.out.println(result.get(30));
 
         System.out.println("\nExample 2: ");

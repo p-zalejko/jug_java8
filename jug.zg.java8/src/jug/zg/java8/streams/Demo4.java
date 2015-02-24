@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class Demo4 {
 
-	private static final int LIMIT = 10_000_000;
+	private static final int LIMIT = 400_000_000;
 
 	public static void main(final String[] args) {
 		// ForkJoinPool commonPool = ForkJoinPool.commonPool();

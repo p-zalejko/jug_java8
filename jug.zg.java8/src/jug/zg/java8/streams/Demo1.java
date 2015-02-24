@@ -10,7 +10,7 @@ public class Demo1 {
 
     public static void main(final String[] args) {
     	//NOTE: stream can be opened only once!
-        final Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(4, 7, 5, 1, 9, 6, 2, 10,3 ,8 );
+        final Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(4, 7, 5, 1, 9, 6, 2, 10,3 ,8);
 
         System.out.println("Example 1: ");
         final Stream<Integer> stream = streamSupplier.get();

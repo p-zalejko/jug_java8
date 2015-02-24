@@ -20,9 +20,9 @@ public class ExampleAnnotations {
 
 	public static void main(String[] args) {
 		new ExampleAnnotations(null);
-		new ExampleAnnotations("foo");
-		
+		new @ReadOnly ExampleAnnotations("foo");
+
 		// 4.
-		boolean isEmail = "foo@bar" instanceof @Email String;
+		boolean isEmail = "foo@bar.com" instanceof @Email String;
 	}
 }
