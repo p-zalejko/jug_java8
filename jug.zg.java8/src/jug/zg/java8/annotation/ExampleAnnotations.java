@@ -19,6 +19,8 @@ public class ExampleAnnotations {
 	}
 
 	public static void main(String[] args) {
+		// in eclipse in order to launch null validation go to
+		// window > preferences > Java > compiler > errors/warnings > null analysis
 		new ExampleAnnotations(null);
 		new @ReadOnly ExampleAnnotations("foo");
 
